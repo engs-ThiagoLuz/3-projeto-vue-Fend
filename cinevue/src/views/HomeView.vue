@@ -79,7 +79,7 @@ export default {
   padding: 14px 20px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background: #222;
+  background: rgb(36, 19, 43);
   color: #ffffff; /* Texto branco ao digitar */
   font-size: 1rem;
   transition: all 0.3s ease;

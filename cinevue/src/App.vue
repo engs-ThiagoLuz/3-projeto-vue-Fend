@@ -1,7 +1,7 @@
 <template>
   <header class="navbar">
     <div class="nav-container">
-      <h1 class="logo">CineVue</h1>
+      <h1 class="logo">CineVue - Filmes para todos e todes!</h1>
       <nav>
         <router-link to="/">Início</router-link>
         <router-link to="/contato">Feedback</router-link>
@@ -16,7 +16,7 @@
 
 <style scoped>
 .navbar {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgb(208, 111, 247);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;

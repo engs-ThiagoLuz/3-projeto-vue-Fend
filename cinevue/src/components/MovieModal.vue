@@ -34,8 +34,8 @@ export default {
 }
 
 .modal-content {
-  background: var(--bg-card);
-  color: var(--text-main); /* Força o texto a ficar branco */
+  background: rgb(208, 111, 247);
+  color: var(--text-main); 
   padding: 40px;
   border-radius: 12px;
   max-width: 550px;
@@ -70,7 +70,7 @@ h2 {
 .btn-close {
   background: var(--primary);
   color: white;
-  border: none;
+  border-color: red;
   padding: 12px 28px;
   font-weight: bold;
   font-size: 1rem;

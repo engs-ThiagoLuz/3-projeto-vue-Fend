@@ -73,6 +73,6 @@ label { margin-bottom: 5px; font-weight: bold; }
 input, textarea { padding: 10px; background: #111; border: 1px solid #444; color: white; border-radius: 4px; }
 .input-error { border-color: var(--primary); }
 .error-text { color: var(--primary); font-size: 0.85rem; margin-top: 5px; }
-.btn-submit { background: var(--primary); color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 4px; margin-top: 10px; }
+.btn-submit { background: var(--primary); color: black; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 4px; margin-top: 10px; }
 .success-alert { background: #2e7d32; color: white; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
 </style>
