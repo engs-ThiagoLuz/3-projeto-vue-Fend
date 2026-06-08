@@ -68,16 +68,50 @@ export default {
     />
   </div>
 </template>
-
 <style scoped>
-.controls { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-.input-search, .select-filter { padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: white; flex: 1; min-width: 200px; }
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
 
-/* Grid Totalmente Responsivo: Mobile (1 col), Tablet (2 cols), Desktop (3+ cols) */
+.input-search, .select-filter {
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #222;
+  color: #ffffff; /* Texto branco ao digitar */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-search {
+  flex: 2;
+}
+
+.select-filter {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* Efeito de foco moderno */
+.input-search:focus, .select-filter:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+}
+
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
 }
-.no-results { text-align: center; margin-top: 40px; color: #aaa; }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 </style>

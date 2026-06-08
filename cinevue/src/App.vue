@@ -16,10 +16,15 @@
 
 <style scoped>
 .navbar {
-  background-color: #000;
-  padding: 15px 0;
-  border-bottom: 2px solid var(--primary);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -28,13 +33,31 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.logo { color: var(--primary); }
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
+
+.logo {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
 nav a.router-link-exact-active {
   color: var(--primary);
 }
