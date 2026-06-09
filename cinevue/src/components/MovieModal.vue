@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'MovieModal',
   props: {
     movie: Object,
     isOpen: Boolean
@@ -8,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="isOpen" class="modal-overlay" @click.self="$emit('close')">
+  <div v-if="isOpen && movie" class="modal-overlay" @click.self="$emit('close')">
     <div class="modal-content">
       <h2>{{ movie.title }}</h2>
       <p class="genre"><strong>Gênero:</strong> {{ movie.genre }}</p>
@@ -17,6 +18,7 @@ export default {
     </div>
   </div>
 </template>
+
 <style scoped>
 .modal-overlay {
   position: fixed;
@@ -24,8 +26,8 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px); /* Desfoca os cards atrás */
+  background: rgba(12, 5, 15, 0.85); /* Fundo escuro transparente */
+  backdrop-filter: blur(8px); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,58 +36,62 @@ export default {
 }
 
 .modal-content {
-  background: rgb(208, 111, 247);
-  color: var(--text-main); 
-  padding: 40px;
-  border-radius: 12px;
-  max-width: 550px;
+  background: rgb(208, 111, 247); /* O rosa agradável principal */
+  color: #14071c; /* Texto escuro para excelente legibilidade sobre o rosa */
+  padding: 35px;
+  border-radius: 16px;
+  max-width: 500px;
   width: 100%;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #14071c;
+  font-weight: 800;
 }
 
 .genre {
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 20px;
+  color: #5b0ca3; /* Roxo escuro para destacar o rótulo do gênero */
+  font-weight: 700;
+  margin-bottom: 18px;
   text-transform: uppercase;
   font-size: 0.85rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .synopsis {
-  color: var(--text-muted);
+  color: #2c163a;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-size: 1rem;
 }
 
 .btn-close {
-  background: var(--primary);
-  color: white;
-  border-color: red;
+  background: #14071c; /* Botão escuro contratando com o fundo rosa */
+  color: #ffffff;
+  border: none;
   padding: 12px 28px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.1s;
   width: 100%;
 }
 
 .btn-close:hover {
-  background: #b80710;
+  background: #2a113b;
+}
+
+.btn-close:active {
+  transform: scale(0.98);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 </style>

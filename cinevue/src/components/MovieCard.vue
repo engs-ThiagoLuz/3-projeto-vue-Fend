@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'MovieCard',
   // Recebe o objeto do filme como Propriedade (Reutilização)
   props: {
     movie: { type: Object, required: true }
@@ -20,14 +21,67 @@ export default {
 
 <style scoped>
 .card {
-  background: var(--gray);
-  border-radius: 8px;
+  background: #1e0f24; 
+  border: 1px solid #3d2349;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.card:hover { transform: scale(1.03); }
-.card-img { width: 100%; height: 250px; object-fit: cover; }
-.card-body { padding: 15px; display: flex; flex-direction: column; gap: 10px; }
-.badge { background: var(--primary); width: fit-content; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; }
-.btn-detail { background: #fff; color: #000; border: none; padding: 8px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+
+
+.card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(208, 111, 247, 0.15);
+}
+
+.card-img { 
+  width: 100%; 
+  height: 260px; 
+  object-fit: cover; 
+}
+
+.card-body { 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.badge { 
+  background: #d06ff7;
+  color: #14071c;
+  font-weight: bold;
+  width: fit-content; 
+  padding: 4px 10px; 
+  border-radius: 6px; 
+  font-size: 0.75rem; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-detail { 
+  background: transparent; 
+  color: #d06ff7; 
+  border: 2px solid #d06ff7; 
+  padding: 10px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  border-radius: 6px; 
+  transition: all 0.2s ease;
+  margin-top: 5px;
+}
+
+.btn-detail:hover {
+  background: #d06ff7;
+  color: #14071c;
+}
 </style>
