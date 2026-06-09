@@ -16,7 +16,9 @@
 
 <style scoped>
 .navbar {
-  background-image: linear-gradient(red, blue);
+  background-color: rgb(208, 111, 247);
+  background-color: rgb(208, 111, 247);
+  background-image: linear-gradient(rgb(127, 10, 173), rgb(208, 111, 247));
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
