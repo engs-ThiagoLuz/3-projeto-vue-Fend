@@ -23,8 +23,9 @@ export default {
       if (Object.keys(this.errors).length === 0) {
         this.submitted = true;
         this.form = { name: '', email: '', message: '' };
-        // Remove o alerta de sucesso após alguns segundos
-        setTimeout(() => { this.submitted = false; }, 5000);
+        
+        /* Remove o banner de sucesso depois de 5 segundos */
+        setTimeout(() => { this.submitted = false; }, 5000); 
       }
     }
   }
@@ -68,7 +69,7 @@ export default {
 .contact-box { 
   max-width: 550px; 
   margin: 40px auto; 
-  background: #1e0f24; 
+  background: #1e0f24; /* Caixa de fundo combina com a cor interna dos cards */
   border: 1px solid #3d2349;
   padding: 35px; 
   border-radius: 12px; 
@@ -80,7 +81,6 @@ h2 { margin-bottom: 5px; color: #fff; }
 .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
 label { margin-bottom: 8px; font-weight: 600; color: #e0d5e6; font-size: 0.9rem; }
 
-/* Input padronizado com a cor que você definiu na Home */
 input, textarea { 
   padding: 12px 16px; 
   background: rgb(36, 19, 43); 
@@ -97,7 +97,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(208, 111, 247, 0.2);
 }
 
-/* Erros visuais elegantes em tom rosa/avermelhado condizente */
+/* Tons para os alertas de erro */
 .input-error { border-color: #ff527b !important; }
 .error-text { color: #ff527b; font-size: 0.8rem; margin-top: 6px; font-weight: 500; }
 

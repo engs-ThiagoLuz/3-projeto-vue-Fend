@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-  <div class="home-page">
+  <div>
     <div class="controls">
       <input v-model="searchQuery" type="text" placeholder="Buscar filme..." class="input-search">
       
@@ -58,7 +58,7 @@ export default {
         @open-modal="openDetails"
       />
     </div>
-    <p v-else class="no-results">Nenhum filme encontrado para a sua busca.</p>
+    <p v-else class="no-results">Nenhum filme encontrado.</p>
 
     <MovieModal 
       :movie="selectedMovie" 
@@ -69,10 +69,6 @@ export default {
 </template>
 
 <style scoped>
-.home-page {
-  padding: 20px 0;
-}
-
 .controls {
   display: flex;
   gap: 20px;
@@ -82,8 +78,8 @@ export default {
 .input-search, .select-filter {
   padding: 14px 20px;
   border-radius: 8px;
-  border: 1px solid #3d2349;
-  background: rgb(36, 19, 43); /* Sua escolha excelente de cor */
+  border: 1px solid #3d2349; /* Tom sutil para as bordas dos inputs em repouso */
+  background: rgb(36, 19, 43); 
   color: #ffffff; 
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -100,14 +96,14 @@ export default {
 
 .input-search:focus, .select-filter:focus {
   outline: none;
-  border-color: rgb(208, 111, 247);
+  border-color: rgb(208, 111, 247); /* Transição para o rosa de destaque ao focar */
   box-shadow: 0 0 0 3px rgba(208, 111, 247, 0.2);
 }
 
-/* Grid Responsiva e fluida com CSS nativo puro */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  /* Grid fluida nativa que calcula colunas automáticas de no mínimo 260px */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
   gap: 30px;
 }
 
@@ -118,14 +114,10 @@ export default {
   margin-top: 50px;
 }
 
-/* Ajustes de responsividade para celulares */
 @media (max-width: 768px) {
   .controls {
     flex-direction: column;
     gap: 15px;
-  }
-  .input-search, .select-filter {
-    width: 100%;
   }
 }
 </style>

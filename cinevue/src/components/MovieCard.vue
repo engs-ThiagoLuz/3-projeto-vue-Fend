@@ -1,7 +1,6 @@
 <script>
 export default {
   name: 'MovieCard',
-  // Recebe o objeto do filme como Propriedade (Reutilização)
   props: {
     movie: { type: Object, required: true }
   }
@@ -21,7 +20,7 @@ export default {
 
 <style scoped>
 .card {
-  background: #1e0f24; 
+  background: #1e0f24; /* Fundo roxo escuro fixo */
   border: 1px solid #3d2349;
   border-radius: 12px;
   overflow: hidden;
@@ -31,10 +30,9 @@ export default {
   justify-content: space-between;
 }
 
-
 .card:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 20px rgba(208, 111, 247, 0.15);
+  transform: translateY(-5px); /* Efeito de elevação suave */
+  box-shadow: 0 8px 20px rgba(208, 111, 247, 0.15); 
 }
 
 .card-img { 
@@ -57,7 +55,7 @@ h3 {
 }
 
 .badge { 
-  background: #d06ff7;
+  background: rgb(208, 111, 247); 
   color: #14071c;
   font-weight: bold;
   width: fit-content; 
@@ -70,8 +68,8 @@ h3 {
 
 .btn-detail { 
   background: transparent; 
-  color: #d06ff7; 
-  border: 2px solid #d06ff7; 
+  color: rgb(208, 111, 247); 
+  border: 2px solid rgb(208, 111, 247); 
   padding: 10px; 
   font-weight: bold; 
   cursor: pointer; 
@@ -81,7 +79,7 @@ h3 {
 }
 
 .btn-detail:hover {
-  background: #d06ff7;
+  background: rgb(208, 111, 247);
   color: #14071c;
 }
 </style>

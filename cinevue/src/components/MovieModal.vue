@@ -9,6 +9,7 @@ export default {
 </script>
 
 <template>
+ 
   <div v-if="isOpen && movie" class="modal-overlay" @click.self="$emit('close')">
     <div class="modal-content">
       <h2>{{ movie.title }}</h2>
@@ -18,15 +19,16 @@ export default {
     </div>
   </div>
 </template>
-
 <style scoped>
+/* Verificação dupla no código acima caso as props demorem para carregar */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(12, 5, 15, 0.85); /* Fundo escuro transparente */
+  background: rgba(12, 5, 15, 0.85); 
   backdrop-filter: blur(8px); 
   display: flex;
   align-items: center;
@@ -36,8 +38,8 @@ export default {
 }
 
 .modal-content {
-  background: rgb(208, 111, 247); /* O rosa agradável principal */
-  color: #14071c; /* Texto escuro para excelente legibilidade sobre o rosa */
+  background: rgb(208, 111, 247); 
+  color: #14071c; /* Tom escuro profundo para legibilidade perfeita sobre o rosa */
   padding: 35px;
   border-radius: 16px;
   max-width: 500px;
@@ -54,7 +56,7 @@ h2 {
 }
 
 .genre {
-  color: #5b0ca3; /* Roxo escuro para destacar o rótulo do gênero */
+  color: #5b0ca3; /* Roxo escuro para destacar o rótulo sem quebrar o contraste */
   font-weight: 700;
   margin-bottom: 18px;
   text-transform: uppercase;
@@ -70,7 +72,7 @@ h2 {
 }
 
 .btn-close {
-  background: #14071c; /* Botão escuro contratando com o fundo rosa */
+  background: #14071c; 
   color: #ffffff;
   border: none;
   padding: 12px 28px;
@@ -87,7 +89,7 @@ h2 {
 }
 
 .btn-close:active {
-  transform: scale(0.98);
+  transform: scale(0.98); /* Pequeno feedback tátil de clique */
 }
 
 @keyframes fadeIn {
